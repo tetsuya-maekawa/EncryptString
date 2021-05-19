@@ -3,21 +3,33 @@
 ## 概要
 パスワードを指定して、文字列を暗号化、又は複合します。
 
+## 対象のバージョン
+.NETFramework 4.6.2
+
 ## 引数
 * 第一引数：処理モード
-　/e ... 暗号化、/d ... 複合
+　"/e" or "/d"　/e ... 暗号化、/d ... 複合
 * 第二引数：対象の文字列
-　/eの場合 ... 平文、/dの場合 ... 暗号化済みテキスト
-* 第三引数：パスワード 
+　/eの場合 ... 暗号化したい文字列、/dの場合 ... 暗号化済みテキスト
+* 第三引数：パスワード（暗号化と複合には同じパスワードを指定）
 
 ## 使用例
 暗号化する場合
 
-``` EncryptString.exe /e [暗号化したい文字列] [PASSWORD] ```
+```
+EncryptString.exe /e password ABCD
+y0wdJwH2WRAMZuuyuTArPA==
+```
 
 複合する場合
 
-``` EncryptString.exe /d [暗号化済文字列] [PASSWORD] ```
+```
+EncryptString.exe /d y0wdJwH2WRAMZuuyuTArPA== ABCD
+password
+```
 
 
 暗号化後の文字列または複合した文字列が、標準出力(StdOut)に出力されます。
+
+## 更新履歴
+- 2021/05/18 Ver 1.0 初回リリース
