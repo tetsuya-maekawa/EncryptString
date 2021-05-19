@@ -53,7 +53,7 @@ namespace EncryptString
                     stdOut = EncryptString.Decrypt(arg2_Text, arg3_PW);
                 }
 
-                Console.WriteLine(stdOut);
+                Console.Write(stdOut);
 
                 return 0;
             }
